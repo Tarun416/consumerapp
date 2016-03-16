@@ -1,6 +1,8 @@
 package com.example.hp.consumerapp;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,7 +24,15 @@ public class Main2Activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setTitle("Amount To Pay");
-        getSupportActionBar().sett
+
+        int actionBarTitleId = Resources.getSystem().getIdentifier("action_bar_title", "id", "android");
+        if (actionBarTitleId > 0) {
+            TextView title = (TextView) findViewById(actionBarTitleId);
+            if (title != null) {
+                title.setTextColor(col);
+            }
+        }
+       // getSupportActionBar().sett
 
 
 //        getSupportActionBar().setTitle("Amount To Pay");
@@ -32,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
         content= i.getStringExtra("scancontent");
 
         mvisaId=(TextView)findViewById(R.id.mvisaid);
-        mvisaId.setText(content);
+        mvisaId.setText("mvisa Id :"+" "+content);
 
 
 

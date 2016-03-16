@@ -18,9 +18,9 @@
     <TextView
         android:layout_below="@+id/toolbar"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
 
-
+           android:layout_marginLeft="30dp"
 
         android:id="@+id/to"
         android:layout_width="wrap_content"
@@ -30,23 +30,28 @@
 
 
     <TextView
+
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/to"
         android:layout_alignBaseline="@+id/to"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="60dp"
         android:textStyle="bold"
         android:text="John's Cafe"/>
 
     <TextView
+
         android:id="@+id/mvisaid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="mvisa ID : 4672899900044"
+        android:layout_below="@+id/to"
         android:layout_alignStart="@+id/name"
+        android:layout_alignLeft="@+id/name"
 
-        android:layout_below="@+id/name"
+
+
         />
 
 
@@ -56,6 +61,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FROM"
+        android:layout_marginLeft="30dp"
 
 
         android:layout_below="@+id/to"
@@ -76,6 +82,7 @@
 
 
     <TextView
+        android:layout_marginLeft="30dp"
         android:id="@+id/amt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -86,6 +93,7 @@
         />
 
     <EditText
+        android:id="@+id/gg"
         android:singleLine="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,5 +102,17 @@
         android:inputType="number"
         android:layout_alignBaseline="@+id/amt"
         android:layout_alignStart="@+id/saving"/>
+
+
+    <Button
+        android:layout_width="350dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColorPrimary"
+        android:text="CONTINUE"
+        android:layout_below="@+id/amt"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        />
 
         </RelativeLayout>
