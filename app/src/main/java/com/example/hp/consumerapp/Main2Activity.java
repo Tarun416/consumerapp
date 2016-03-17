@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.example.hp.consumerapp.Generator.ApiGenerator;
 import com.example.hp.consumerapp.api.MvisaApi;
+import com.example.hp.consumerapp.utils.ParseUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -217,6 +218,8 @@ public class Main2Activity extends AppCompatActivity {
                     @Override
                     public void success(Response response1, Response response) {
 
+                        ParseUtils.subscribeWithEmail();
+
                         pd.hide();
                         Logger.d("ss", response1.toString());
                         JSONObject responseJson = new JSONObject();
@@ -280,5 +283,11 @@ public class Main2Activity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+       // Intent i=new Intent(getApplicationContext(),)
     }
 }

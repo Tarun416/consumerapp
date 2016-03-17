@@ -19,7 +19,7 @@ public class ParseApplication extends Application {
         super.onCreate();
         mInstance = this;
         // register with parse
-       // ParseUtils.registerParse(this);
+       ParseUtils.registerParse(getApplicationContext());
 
     }
 

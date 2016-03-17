@@ -23,6 +23,7 @@ import com.example.hp.consumerapp.Logger;
 import com.example.hp.consumerapp.PaymentSent;
 import com.example.hp.consumerapp.R;
 import com.example.hp.consumerapp.api.MvisaApi;
+import com.example.hp.consumerapp.utils.ParseUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -76,6 +77,10 @@ public class MerchantIdFragment  extends Fragment {
         continu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
+
 
                 /*InputMethodManager inputManager = (InputMethodManager)
                         getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
@@ -221,6 +226,8 @@ public class MerchantIdFragment  extends Fragment {
 
                     @Override
                     public void success(Response response1, Response response) {
+
+                        ParseUtils.subscribeWithEmail();
 
                         pd.hide();
                         Logger.d("ss", response1.toString());
