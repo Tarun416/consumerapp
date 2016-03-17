@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="50dp">
+
+
+  <!--  <TextView
+        android:id="@+id/to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to"
+        android:layout_alignBaseline="@+id/to"
+        android:layout_marginLeft="50dp"
+        android:textStyle="bold"
+        android:text="John's Cafe"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:text="mvisa ID : 4672899900044"
+        android:layout_alignStart="@+id/name"
+
+        android:layout_below="@+id/name"
+        />
+
+
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FROM"
+
+
+        android:layout_below="@+id/to"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/saving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Savings..5678"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/from"
+        android:layout_alignStart="@id/name"
+        android:layout_toRightOf="@+id/from"
+        />
+
+
+    <TextView
+        android:id="@+id/amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMT(Rs)"
+        android:layout_below="@+id/from"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:singleLine="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/amt"
+        android:text="349"
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/amt"
+        android:layout_alignStart="@+id/saving"/>
+
+
+
+-->
+
+
+
+</RelativeLayout>

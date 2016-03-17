@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:layout_below="@+id/toolbar"
+
+        android:layout_marginTop="80dp"
+
+        android:layout_marginLeft="30dp"
+        android:textSize="16dp"
+
+        android:id="@+id/to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MVISA ID"
+        android:textStyle="bold"/>
+
+
+   <!-- <TextView
+
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to"
+        android:layout_alignBaseline="@+id/to"
+        android:layout_marginLeft="60dp"
+        android:textStyle="bold"
+        android:text="John's Cafe"/>-->
+
+    <EditText
+        android:singleLine="true"
+        android:textSize="16dp"
+        android:inputType="number"
+        android:layout_marginLeft="60dp"
+        android:hint="Enter mVisa Id"
+        android:textColorHint="@color/hint"
+
+
+
+        android:layout_alignBaseline="@+id/to"
+        android:id="@+id/mvisaid"
+        android:layout_toRightOf="@+id/to"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignStart="@+id/name"
+        android:layout_alignLeft="@+id/name"
+
+
+
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FROM"
+        android:layout_marginLeft="30dp"
+        android:textSize="16dp"
+
+        android:layout_below="@+id/to"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/saving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Savings..5678"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_alignBaseline="@+id/from"
+        android:layout_alignStart="@id/mvisaid"
+        android:layout_alignLeft="@+id/mvisaid"
+        android:layout_toRightOf="@+id/from"
+        />
+
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:id="@+id/amt"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMT(Rs)"
+        android:layout_below="@+id/from"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/gg"
+        android:singleLine="true"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+
+        android:layout_toRightOf="@+id/amt"
+
+
+        android:inputType="number"
+        android:textColorHint="@color/hint"
+        android:textSize="16dp"
+
+
+        android:hint="Enter Billing Amount"
+        android:layout_alignBaseline="@+id/amt"
+        android:layout_alignStart="@+id/saving"
+        android:layout_alignLeft="@+id/saving"/>
+
+
+    <Button
+
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="36dp"
+        android:textColor="@color/textColorPrimary"
+        android:text="CONTINUE"
+        android:layout_below="@+id/amt"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        />
+
+
+   <!-- <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make Payment"
+        android:textStyle="bold"
+
+        android:textSize="22dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="50dp"
+        android:id="@+id/first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Account No"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <EditText
+            android:id="@+id/start1"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:singleLine="true"
+
+            android:hint="Enter your Account no"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/second"
+        android:layout_below="@+id/first"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Merchand ID"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <EditText
+            android:id="@+id/merid"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:singleLine="true"
+            android:hint="Enter merchant Id"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/third"
+        android:layout_below="@+id/second"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Amount"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+
+
+        <EditText
+            android:id="@+id/amt"
+            android:singleLine="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:inputType="number"
+
+            android:hint="Enter Amount"/>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/third"
+        android:layout_centerHorizontal="true"
+        android:text="CONFIRM"
+        android:textSize="20dp"/>
+-->
+</RelativeLayout>

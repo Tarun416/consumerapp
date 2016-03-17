@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+   >
+
+    <ImageView
+        android:layout_centerHorizontal="true"
+        android:layout_width="130dp"
+        android:id="@+id/img"
+
+        android:layout_height="wrap_content"
+        android:src="@drawable/images"/>
+
+
+
+    <TextView
+        android:layout_below="@+id/img"
+        android:id="@+id/pay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Payment Sent"
+
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TextView
+        android:id="@+id/amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pay"
+        android:layout_marginTop="16dp"
+        android:text="Rs 740"
+        android:textSize="20dp"
+        android:layout_centerHorizontal="true"></TextView>
+
+
+    <TextView
+        android:id="@+id/name"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/amt"
+        android:layout_centerHorizontal="true"
+        android:text="To : Card Acceptor ABC"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

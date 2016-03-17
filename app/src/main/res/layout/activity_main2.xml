@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:titleTextColor="@color/textColorPrimary"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+
+    <TextView
+        android:layout_below="@+id/toolbar"
+
+        android:layout_marginTop="130dp"
+
+           android:layout_marginLeft="30dp"
+
+        android:id="@+id/to"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:textStyle="bold"/>
+
+
+    <TextView
+
+        android:id="@+id/name"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/to"
+        android:layout_alignBaseline="@+id/to"
+        android:layout_marginLeft="60dp"
+        android:textStyle="bold"
+        android:text="John's Cafe"/>
+
+    <TextView
+        android:textSize="16dp"
+
+        android:id="@+id/mvisaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mvisa ID : 4672899900044"
+        android:layout_below="@+id/to"
+        android:layout_alignStart="@+id/name"
+        android:layout_alignLeft="@+id/name"
+
+
+
+        />
+
+
+
+    <TextView
+        android:id="@+id/from"
+        android:textSize="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FROM"
+        android:layout_marginLeft="30dp"
+
+
+        android:layout_below="@+id/to"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:textSize="16dp"
+        android:id="@+id/saving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Savings..5678"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/from"
+        android:layout_alignStart="@id/name"
+        android:layout_alignLeft="@+id/name"
+        android:layout_toRightOf="@+id/from"
+        />
+
+
+    <TextView
+        android:textSize="16dp"
+
+        android:layout_marginLeft="30dp"
+        android:id="@+id/amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMT(Rs)"
+        android:layout_below="@+id/from"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/gg"
+        android:textSize="16dp"
+        android:singleLine="true"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/amt"
+
+        android:inputType="number"
+        android:layout_alignBaseline="@+id/amt"
+        android:layout_alignStart="@+id/saving"
+        android:layout_alignLeft="@+id/saving"
+        android:textColorHint="@color/hint"/>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="350dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_height="36dp"
+        android:textColor="@color/textColorPrimary"
+        android:text="CONTINUE"
+        android:layout_below="@+id/amt"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        />
+
+        </RelativeLayout>
