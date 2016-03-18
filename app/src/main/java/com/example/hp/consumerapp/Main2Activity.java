@@ -46,6 +46,8 @@ public class Main2Activity extends AppCompatActivity {
     TextView name;
     EditText amount;
     Boolean b;
+    TextView mvisaid;
+    String qrcode;
 
 
     @Override
@@ -57,8 +59,17 @@ public class Main2Activity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main2);
 
+
+        Intent i=getIntent();
+        qrcode= i.getStringExtra("scancontent");
+
+
+
         name=(TextView)findViewById(R.id.name);
         amount=(EditText)findViewById(R.id.gg);
+        mvisaid=(TextView)findViewById(R.id.mvisaid);
+
+        mvisaid.setText("mvisa ID :"+""+ qrcode);
 
         pd=new ProgressDialog(this);
         pd.setMessage("Please Wait...");
