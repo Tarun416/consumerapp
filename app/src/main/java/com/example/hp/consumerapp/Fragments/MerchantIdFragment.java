@@ -52,6 +52,9 @@ public class MerchantIdFragment  extends Fragment {
     MvisaApi mvisaApi;
     Boolean b=true;
     String name;
+    JSONObject j;
+    JSONObject data;
+    String message;
 
     public MerchantIdFragment() {
     }
@@ -65,12 +68,38 @@ public class MerchantIdFragment  extends Fragment {
         pd.setCancelable(false);
         pd.hide();
 
+      //Bundle extras=  getActivity().getIntent().getExtras();
+        message= getActivity().getIntent().getStringExtra("alert");
+
+       /* if(extras==null)
+        {
+
+        }
+        else
+
+        {
+            String msg = extras.getString("com.parse.data");
+            try {
+                j = new JSONObject(msg);
+                 String data = (String) j.get("alert");
+                Log.d("JSONObject j value", data);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+         message=    extras.getString("alert");
+
+         //  String message= j.getString("alert");
+
+        }
+*/
         mid=(EditText)v.findViewById(R.id.mvisaid);
 
 
 
        // mid.setFilters(new InputFilter[]{new InputFilterMinMax("13", "16")});
         amt=(EditText)v.findViewById(R.id.gg);
+      //  amt.setText(message);
         continu=(Button)v.findViewById(R.id.button);
 
 
@@ -90,28 +119,24 @@ public class MerchantIdFragment  extends Fragment {
 
                 pd.show();
 
-                if(TextUtils.isEmpty(mid.getText().toString()) || mid.getText().toString().length()<13 || mid.length()>16)
-                {
-                    b=false;
+                if (TextUtils.isEmpty(mid.getText().toString()) || mid.getText().toString().length() < 13 || mid.length() > 16) {
+                    b = false;
 
                     pd.hide();
                     mid.requestFocus();
-                   mid.setError("Mvisa Id should be of 13-16 digits");
+                    mid.setError("Mvisa Id should be of 13-16 digits");
                 }
 
-                if(TextUtils.isEmpty(amt.getText().toString())|| Integer.parseInt( amt.getText().toString())<50)
-                {
-                    b=false;
+                if (TextUtils.isEmpty(amt.getText().toString()) || Integer.parseInt(amt.getText().toString()) < 50) {
+                    b = false;
 
                     pd.hide();
                     amt.requestFocus();
                     amt.setError("Minimum Transaction amount should be Rs 50");
-                }
-
-                else if(b) {
+                } else if (b) {
                     sendToApi(v);
                 }
-                b=true;
+                b = true;
             }
         });
 
@@ -125,8 +150,8 @@ public class MerchantIdFragment  extends Fragment {
     public void onResume() {
         super.onResume();
 
-        mid.setText("");
-        amt.setText("");
+       // mid.setText("");
+      //  amt.setText("");
     }
 
     private void  sendToApi(View v)
@@ -265,7 +290,7 @@ public class MerchantIdFragment  extends Fragment {
                         pd.hide();
 
                         Logger.d("error", error.getMessage());
-                        Toast.makeText(getActivity(), "Please Try Again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Please Check Details and try again", Toast.LENGTH_SHORT).show();
 
                     }
                 });

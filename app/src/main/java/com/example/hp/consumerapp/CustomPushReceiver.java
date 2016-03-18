@@ -63,15 +63,16 @@ public class CustomPushReceiver  extends ParsePushBroadcastReceiver {
      */
     private void parsePushJson(Context context, JSONObject json) {
         try {
-            boolean isBackground = json.getBoolean("is_background");
-            JSONObject data = json.getJSONObject("data");
-            String title = data.getString("title");
-            String message = data.getString("message");
+          //  boolean isBackground = json.getBoolean("is_background");
+          //  JSONObject data = json.getJSONObject("data");
+          //  String title = data.getString("title");
+          //  String message = data.getString("message");
+            String alert = json.getString("alert");
 
-            if (!isBackground) {
+         //   if (!isBackground) {
                 Intent resultIntent = new Intent(context, MainActivity.class);
-                showNotificationMessage(context, title, message, resultIntent);
-            }
+                showNotificationMessage(context, "title", "message", resultIntent,alert);
+           // }
 
         } catch (JSONException e) {
             Log.e(TAG, "Push message json exception: " + e.getMessage());
@@ -88,11 +89,13 @@ public class CustomPushReceiver  extends ParsePushBroadcastReceiver {
      * @param message
      * @param intent
      */
-    private void showNotificationMessage(Context context, String title, String message, Intent intent) {
+    private void showNotificationMessage(Context context, String title, String message, Intent intent,String alert) {
 
         notificationUtils = new NotificationUtils(context);
 
-        intent.putExtras(parseIntent.getExtras());
+        //intent.putExtras(parseIntent.getExtras());
+
+        intent.putExtra("alert",alert);
 
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 

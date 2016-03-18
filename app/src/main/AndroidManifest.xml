@@ -7,6 +7,7 @@
         android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -21,9 +22,9 @@
     <uses-permission android:name="com.example.hp.consumerapp.permission.C2D_MESSAGE" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
 
-    <meta-data
+   <!-- <meta-data
         android:name="com.google.android.gms.version"
-        android:value="704037815153" />
+        android:value="704037815153" />-->
 
 
     <application
@@ -72,13 +73,13 @@
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
                 <!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
-                <category android:name="com.example.android.parsepushnofication" />
+                <category android:name="com.example.hp.consumerapp" />
             </intent-filter>
         </receiver>
 
-        <meta-data
+        <!--<meta-data
             android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version" />-->
 
     </application>
 

@@ -29,8 +29,9 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.5.0'
     compile files('libs/org-apache-commons-codec.jar')
-    compile 'com.parse:parse-android:1.+'
+  //  compile 'com.parse:parse-android:1.+'
     compile 'com.parse.bolts:bolts-android:1.+'
-    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+   // compile fileTree(include: 'Parse-*.jar', dir: 'libs')
     compile 'com.google.android.gms:play-services-maps:8.3.0'
+    compile files('libs/Parse-1.13.0.jar')
 }

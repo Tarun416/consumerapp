@@ -18,9 +18,11 @@ import com.parse.SendCallback;
  * Created by rahul on 17/03/16.
  */
 public class ParseUtils {
+   // i5YGC0IKzNbkgZhbOXUQgCM2mmt4FaEWQEL9g3xY
+  //  eTQi6jRbry5kcxJ07ioGXQRetV2LP5kNoio42V6S
     private static final String APPLICATION_ID = "yzCJSEpMYxI2BMMX0bzVJp1f3uQ1GrAzthFwtRPy";
     private static final String CLIENT_KEY = "YkGd1WAfVLhUC4ltdpPwZJWiuqS3TZS5eYA0DLLo";
-    private static final String PARSE_CHANNEL = "Payment";
+    private static final String PARSE_CHANNEL = "mVisa";
     //private static final String APPLICATION_ID="";
     private static String TAG = ParseUtils.class.getSimpleName();
     private static String deviceToken;
@@ -37,25 +39,30 @@ public class ParseUtils {
         // initializing parse library
         Parse.initialize(context, APPLICATION_ID, CLIENT_KEY);
         ParseInstallation.getCurrentInstallation().saveInBackground();
-        ParseUser.enableAutomaticUser();
+      //  ParseUser.enableAutomaticUser();
 
 
 
-        ParsePush.subscribeInBackground("pharse_chanel", new SaveCallback() {
+        ParsePush.subscribeInBackground(PARSE_CHANNEL, new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                Log.e(TAG, "Successfully subscribed to Parse!");
+                String devicetoken=(String)ParseInstallation.getCurrentInstallation().get("deviceToken");
+//                Log.d("token",devicetoken);
+                Log.d(TAG, "Successfully subscribed to Parse!");
             }
         });
     }
 
     public static void subscribeWithEmail() {
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+      //  installation.put("email",email);
         //Log.d("Email", email);
         //installation.put("email", email);
         installation.saveInBackground();
         ParsePush push = new ParsePush();
-        push.setChannel("");
+       // ouch_dzW0O4HlfS
+       // mVisa_GAB2bDQdkj
+        push.setChannel("touch_dzW0O4HlfS");
         push.setMessage("Payment Received Successfully");
         push.sendInBackground(new SendCallback() {
             @Override
