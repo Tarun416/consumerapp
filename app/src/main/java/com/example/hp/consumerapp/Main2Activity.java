@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,8 @@ import org.json.JSONObject;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -48,6 +51,8 @@ public class Main2Activity extends AppCompatActivity {
     Boolean b;
     TextView mvisaid;
     String qrcode;
+    String strDate;
+    StringBuffer sb;
 
 
     @Override
@@ -58,6 +63,23 @@ public class Main2Activity extends AppCompatActivity {
       //  getActionBar()/* or getSupportActionBar() */.setTitle(Html.fromHtml("<font color=\"red\">" + getString(R.string.app_name) + "</font>"));
 
         setContentView(R.layout.activity_main2);
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        strDate = sdf.format(c.getTime());
+        sb=new StringBuffer(strDate);
+        Log.d("date", strDate);
+
+        for(int i=0;i<sb.length();i++)
+        {
+            if(sb.charAt(i)==' ')
+            {
+                sb.replace(10,11,"T");
+            }
+//            a[i]=a[i]+strDate.charAt(i);
+        }
+
+        Log.d("date", sb.toString());
 
 
         Intent i=getIntent();
@@ -182,7 +204,7 @@ public class Main2Activity extends AppCompatActivity {
 
             jsonObject.put("feeProgramIndicator","123");
 
-            jsonObject.put("localTransactionDateTime", "2016-03-17T07:01:15");
+            jsonObject.put("localTransactionDateTime", sb);
 
 
             jsonObject.put("purchaseIdentifier",purchaseIdentifier);

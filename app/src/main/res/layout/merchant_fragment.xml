@@ -32,7 +32,10 @@
         android:text="John's Cafe"/>-->
 
     <EditText
+
         android:singleLine="true"
+
+
         android:textSize="16dp"
         android:inputType="number"
         android:layout_marginLeft="60dp"
@@ -82,6 +85,7 @@
         android:layout_alignStart="@id/mvisaid"
         android:layout_alignLeft="@+id/mvisaid"
         android:layout_toRightOf="@+id/from"
+
         />
 
 

@@ -32,6 +32,8 @@ import org.w3c.dom.Text;
 import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import retrofit.Callback;
 import retrofit.RetrofitError;
@@ -44,6 +46,10 @@ import retrofit.mime.TypedInput;
  * Created by rahul on 16/03/16.
  */
 public class MerchantIdFragment  extends Fragment {
+   // 2016-03-21 14:02:12
+
+    String strDate;
+    StringBuffer sb;
 
     EditText mid;
     EditText amt;
@@ -55,6 +61,7 @@ public class MerchantIdFragment  extends Fragment {
     JSONObject j;
     JSONObject data;
     String message;
+    String a[];
 
     public MerchantIdFragment() {
     }
@@ -101,6 +108,24 @@ public class MerchantIdFragment  extends Fragment {
         amt=(EditText)v.findViewById(R.id.gg);
       //  amt.setText(message);
         continu=(Button)v.findViewById(R.id.button);
+
+
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        strDate = sdf.format(c.getTime());
+        sb=new StringBuffer(strDate);
+        Log.d("date",strDate);
+
+        for(int i=0;i<sb.length();i++)
+        {
+            if(sb.charAt(i)==' ')
+            {
+                sb.replace(10,11,"T");
+            }
+//            a[i]=a[i]+strDate.charAt(i);
+        }
+
+        Log.d("date",sb.toString());
 
 
         continu.setOnClickListener(new View.OnClickListener() {
@@ -156,6 +181,11 @@ public class MerchantIdFragment  extends Fragment {
 
     private void  sendToApi(View v)
     {
+
+
+
+
+
         InputStream cert = getActivity().getResources().openRawResource(R.raw.cert);
         BufferedInputStream bis = new BufferedInputStream(cert);
 
@@ -205,7 +235,7 @@ public class MerchantIdFragment  extends Fragment {
 
             jsonObject.put("feeProgramIndicator","123");
 
-            jsonObject.put("localTransactionDateTime", "2016-03-17T07:01:15");
+            jsonObject.put("localTransactionDateTime",sb);
 
 
             jsonObject.put("purchaseIdentifier",purchaseIdentifier);
@@ -290,7 +320,7 @@ public class MerchantIdFragment  extends Fragment {
                         pd.hide();
 
                         Logger.d("error", error.getMessage());
-                        Toast.makeText(getActivity(), "Please Check Details and try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(), "Some error occured, Please check your Internet connection", Toast.LENGTH_SHORT).show();
 
                     }
                 });
