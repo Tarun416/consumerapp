@@ -62,7 +62,7 @@ public class ParseUtils {
         ParsePush push = new ParsePush();
        // ouch_dzW0O4HlfS
        // mVisa_GAB2bDQdkj
-        push.setChannel("touch_dzW0O4HlfS");
+        push.setChannel("touch_LUrnjyeT4");
         push.setMessage("Payment Received Successfully");
         push.sendInBackground(new SendCallback() {
             @Override

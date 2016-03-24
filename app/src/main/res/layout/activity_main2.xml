@@ -52,6 +52,7 @@
 
     <TextView
         android:textSize="16dp"
+        android:singleLine="true"
 
         android:id="@+id/mvisaid"
         android:layout_width="wrap_content"

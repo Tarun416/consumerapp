@@ -189,7 +189,13 @@ public class MerchantIdFragment  extends Fragment {
         InputStream cert = getActivity().getResources().openRawResource(R.raw.cert);
         BufferedInputStream bis = new BufferedInputStream(cert);
 
+
+
+
         InputStream bundle =getActivity().getResources().openRawResource(R.raw.myapp_keyandcertbundle);
+
+
+      //  BufferedInputStream bundle1 = new BufferedInputStream(bundle);
         mvisaApi = ApiGenerator.createService(MvisaApi.class, bis, bundle);
 
 
@@ -302,6 +308,7 @@ public class MerchantIdFragment  extends Fragment {
                         i.putExtra("name",name);
                         i.putExtra("amount",amt.getText().toString());
                         startActivity(i);
+                        getActivity().finish();
 
 
 

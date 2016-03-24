@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Pay Merchant");
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);

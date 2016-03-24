@@ -91,7 +91,7 @@ public class Main2Activity extends AppCompatActivity {
         amount=(EditText)findViewById(R.id.gg);
         mvisaid=(TextView)findViewById(R.id.mvisaid);
 
-        mvisaid.setText("mvisa ID :"+""+ qrcode);
+        mvisaid.setText("mVisa ID :"+""+ qrcode);
 
         pd=new ProgressDialog(this);
         pd.setMessage("Please Wait...");
@@ -103,7 +103,7 @@ public class Main2Activity extends AppCompatActivity {
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"#FFFFFF\">Amount To Pay</font>"));
 
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         bu=(Button)findViewById(R.id.button);
 
@@ -159,6 +159,10 @@ public class Main2Activity extends AppCompatActivity {
         BufferedInputStream bis = new BufferedInputStream(cert);
 
         InputStream bundle = getApplicationContext().getResources().openRawResource(R.raw.myapp_keyandcertbundle);
+
+        BufferedInputStream bundle1 = new BufferedInputStream(bundle);
+
+
         mvisaApi = ApiGenerator.createService(MvisaApi.class, bis, bundle);
 
 
@@ -266,6 +270,7 @@ public class Main2Activity extends AppCompatActivity {
                         i.putExtra("name",name.getText().toString());
                         i.putExtra("amount",amount.getText().toString());
                         startActivity(i);
+                        finish();
 
 
 
@@ -321,6 +326,8 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-       // Intent i=new Intent(getApplicationContext(),)
+
+        Intent i=new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(i);
     }
 }

@@ -4,9 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import com.example.hp.consumerapp.Logger;
+import com.example.hp.consumerapp.NoSSLv3SocketFactory;
 import com.squareup.okhttp.CipherSuite;
 import com.squareup.okhttp.ConnectionSpec;
 import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.TlsVersion;
 
 import org.apache.commons.codec.binary.Base64;
 
@@ -55,6 +57,7 @@ public class ApiGenerator {
     static Certificate ca;
 
 
+
     static KeyStore keyStore;
     Context context;
    static SSLSocketFactory NoSSLv3Factory;
@@ -93,7 +96,7 @@ public class ApiGenerator {
 
     public static <S> S createService(Class<S> serviceClass, InputStream cert, InputStream bundle) {
         ConnectionSpec spec = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
-                .tlsVersions("TLSv1")
+                .tlsVersions(TlsVersion.TLS_1_2)
                 .cipherSuites(
 
 
@@ -120,7 +123,7 @@ public class ApiGenerator {
         KeyStore keyStore = readKeyStore(cert , bundle); //your method to obtain KeyStore
 
         try {
-             sslContext = SSLContext.getInstance("SSL");
+             sslContext = SSLContext.getInstance("TLSv1");
 
 
              trustManagerFactory = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
@@ -128,7 +131,7 @@ public class ApiGenerator {
 
         catch(NoSuchAlgorithmException e)
         {
-
+          Log.d("dddd",e.getMessage());
         }
 
         try {
@@ -167,11 +170,18 @@ public class ApiGenerator {
         try {
             //sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), new SecureRandom());
             sslContext.init(keyManagerFactory.getKeyManagers(), trustAllCerts, new SecureRandom());
+
+          //   NoSSLv3Factory = new NoSSLv3SocketFactory(sslContext.getSocketFactory());
+
         }
         catch(KeyManagementException e)
         {
 
         }
+
+
+
+      // okHttpClient.setSslSocketFactory(NoSSLv3Factory);
 
         // NoSSLv3Factory = new NoSSLv3SocketFactory(sslContext.getSocketFactory());
        okHttpClient.setSslSocketFactory(sslContext.getSocketFactory());
