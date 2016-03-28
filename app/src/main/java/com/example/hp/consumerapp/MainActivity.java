@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new MerchantIdFragment(), "MISA ID");
+        adapter.addFragment(new MerchantIdFragment(), "MVISA ID");
         adapter.addFragment(new QRCodeFragment(), "QR CODE");
         adapter.addFragment(new NFCFragments(), "NFC");
         viewPager.setAdapter(adapter);
