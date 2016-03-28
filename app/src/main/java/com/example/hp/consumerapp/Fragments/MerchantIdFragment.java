@@ -144,7 +144,7 @@ public class MerchantIdFragment  extends Fragment {
 
                 pd.show();
 
-                if (TextUtils.isEmpty(mid.getText().toString()) || mid.getText().toString().length() < 13 || mid.length() > 16) {
+                if (TextUtils.isEmpty(mid.getText().toString()) || mid.getText().toString().length() < 13 || mid.getText().toString().length() > 16) {
                     b = false;
 
                     pd.hide();
