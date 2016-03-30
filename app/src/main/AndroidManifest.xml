@@ -51,6 +51,22 @@
             android:theme="@style/MyMaterialTheme"></activity>
 
 
+        <activity android:name=".CaptureActivityAnyOrientation"
+            android:screenOrientation="fullSensor"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"
+            android:windowSoftInputMode="stateAlwaysHidden">
+
+        </activity>
+
+
+
+
+
+
+
+
+
 
         <service android:name="com.parse.PushService" />
 

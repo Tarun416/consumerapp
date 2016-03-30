@@ -10,6 +10,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -28,10 +29,12 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp:okhttp:2.2.0'
+    compile 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     compile files('libs/org-apache-commons-codec.jar')
   //  compile 'com.parse:parse-android:1.+'
     compile 'com.parse.bolts:bolts-android:1.+'
    // compile fileTree(include: 'Parse-*.jar', dir: 'libs')
     compile 'com.google.android.gms:play-services-maps:8.3.0'
     compile files('libs/Parse-1.13.0.jar')
+    compile 'com.android.support:multidex:1.0.1'
 }

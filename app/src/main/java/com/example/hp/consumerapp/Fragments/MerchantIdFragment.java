@@ -1,24 +1,20 @@
 package com.example.hp.consumerapp.Fragments;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.hp.consumerapp.Generator.ApiGenerator;
-import com.example.hp.consumerapp.InputFilterMinMax;
 import com.example.hp.consumerapp.Logger;
 import com.example.hp.consumerapp.PaymentSent;
 import com.example.hp.consumerapp.R;
@@ -27,7 +23,6 @@ import com.example.hp.consumerapp.utils.ParseUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
@@ -70,7 +65,7 @@ public class MerchantIdFragment  extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.merchant_fragment,container,false);
-        pd=new ProgressDialog(getActivity());
+        pd=new ProgressDialog(getActivity(),R.style.Theme_MyDialog);
         pd.setMessage("Please Wait ...");
         pd.setCancelable(false);
         pd.hide();

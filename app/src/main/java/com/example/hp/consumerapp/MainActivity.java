@@ -10,7 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -43,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Pay Merchant");
 
+
+
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -60,9 +61,20 @@ public class MainActivity extends AppCompatActivity {
                 {
                     pd.hide();
 
-                    IntentIntegrator scanIntegrator = new IntentIntegrator(MainActivity.this);
+                    /*IntentIntegrator scanIntegrator = new IntentIntegrator(MainActivity.this);
 
-                    scanIntegrator.initiateScan();
+                    scanIntegrator.initiateScan();*/
+
+
+                    IntentIntegrator integrator = new IntentIntegrator(MainActivity.this);
+
+
+                    integrator.setCaptureActivity(CaptureActivityAnyOrientation.class);
+                    integrator.setOrientationLocked(false);
+                    integrator.initiateScan();
+
+
+
 
                 }
 

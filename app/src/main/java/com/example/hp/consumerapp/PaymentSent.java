@@ -20,7 +20,15 @@ public class PaymentSent extends AppCompatActivity {
         setContentView(R.layout.activity_payment_sent);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         amt=(TextView)findViewById(R.id.amt);

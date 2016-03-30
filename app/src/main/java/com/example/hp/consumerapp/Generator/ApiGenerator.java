@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.Log;
 
 import com.example.hp.consumerapp.Logger;
-import com.example.hp.consumerapp.NoSSLv3SocketFactory;
 import com.squareup.okhttp.CipherSuite;
 import com.squareup.okhttp.ConnectionSpec;
 import com.squareup.okhttp.OkHttpClient;
